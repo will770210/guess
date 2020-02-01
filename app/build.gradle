@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
+//可以快速存取到畫面上的元件
 apply plugin: 'kotlin-android-extensions'
 
 android {
