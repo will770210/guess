@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">guess</string>
+    <string name="please_enter_a_number">please_enter_a_number</string>
+    <string name="ok">OK</string>
+    <string name="yes_you_got_it">Yes, you get it.</string>
+    <string name="bigger">Bigger</string>
+    <string name="smaller">Smaller</string>
+    <string name="message">Message</string>
+    <string name="title_activity_material">Guess</string>
+    <string name="title_replay_game">Replay Game</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="cancel">Cancel</string>
+    <string name="excellent_the_number_is">Excellent! The number is </string>
+
 </resources>

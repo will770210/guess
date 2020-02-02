@@ -8,29 +8,30 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    var secretNumber = SecretNumber()
+    val secretNumber = SecretNumber()
+    val TAG = MainActivity::class.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("MainActivity", "secret:${secretNumber.secret}")
+        Log.d(TAG, "secret:${secretNumber.secret}")
     }
 
     fun check(view: View) {
         val n: Int = ed_number.text.toString().toInt()
         val diff: Int = secretNumber.validate(n)
-        var message = "Yes, you get it."
+        var message = getString(R.string.yes_you_got_it)
         if (diff > 0) {
-            message = "Bigger"
+            message = getString(R.string.bigger)
         } else if (diff < 0) {
-            message = "Smaller"
+            message = getString(R.string.smaller)
         }
 
 //        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         AlertDialog.Builder(this)
-            .setTitle("Message")
+            .setTitle(getString(R.string.message))
             .setMessage(message)
-            .setPositiveButton("OK", null)
+            .setPositiveButton(getString(R.string.ok), null)
             .show()
     }
 }
