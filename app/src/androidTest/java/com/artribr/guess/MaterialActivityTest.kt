@@ -48,5 +48,18 @@ class MaterialActivityTest {
             }
         }
 
+        onView(withId(R.id.ed_number)).perform(closeSoftKeyboard());
+
+        //找到重玩的按鈕按下
+        onView(withId(R.id.fab)).perform(click())
+        //確認是否有跳出確認訊息
+        onView(withText(resources.getString(R.string.title_replay_game))).check(matches(isDisplayed()))
+        //最後按下ok按鈕, 關閉AlertDialog
+        onView(withText(resources.getString(R.string.ok))).perform(click())
+        //確認counter，是否重設為 0
+        onView(withId(R.id.tv_count)).check(matches(withText("0")))
+
     }
+
+
 }
